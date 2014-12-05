@@ -10,6 +10,7 @@
     "angular-ui-router": "0.*",
     "angular-resource": "~1.2.x",
     "ngcart": "~0.0.2-rc.1",
-    "rainbow": "~1.1.9"
+    "rainbow": "~1.1.9",
+    "bootstrap": "~3.3.1"
   }
 }

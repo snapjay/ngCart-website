@@ -1,13 +1,12 @@
 
-var app = angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart']);
+angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
 
-
-app.run (['$rootScope', '$state', function($rootScope, $state){
+.run (['$rootScope', '$state', function($rootScope, $state){
     $rootScope.$state = $state;
 
 }])
 
-app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
+.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
 
@@ -15,6 +14,7 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', functio
         .state('site', {
             abstract:true,
             url: "/",
+            controller:"main",
             template: "<div ui-view></div>"
         })
 
@@ -26,6 +26,7 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', functio
 
       .state('site.cart', {
             url: "cart",
+            controller:"cart",
             templateUrl: 'partials/cart.html'
         })
 
@@ -35,24 +36,36 @@ app.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', functio
         })
 
 
-}]);
-    app.controller('main',[ '$http','ngCart', '$scope', function ($http, ngCart, $scope) {
+}])
+    .controller('main',[ '$http','ngCart', '$scope', function ($http, ngCart, $scope) {
 
         ngCart.setShipping(10.99);
         ngCart.setTax(13);
 
 
-    $http({method: 'GET', url: 'data/phones.json'}).
-        success(function(data, status, headers, config) {
+    $http({method: 'GET', url: 'data/phones.json'})
+        .success(function(data, status, headers, config) {
             $scope.products = data;
-        }).
-        error(function(data, status, headers, config) {
+        })
+        .error(function(data, status, headers, config) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
         });
 
+
 }])
 
+.controller('cart',['ngCart', '$log', '$scope', function (ngCart,$log, $scope) {
+    $scope.showCart = function(){
+
+        $log.info ('---Total Cost:---');
+        $log.info (ngCart.totalCost());
+        $log.info ('---Items in Cart:---');
+        $log.info (ngCart.getItems());
+
+    }
+
+}])
     .directive('rainbowBlock', function () {
 
     return {

@@ -15,10 +15,19 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-
 pre {
     padding: 25px;
 }
+table td{
+    font-size: 14px;
+}
+table tfoot td{
+    font-weight: bold;
+}
+.navbar-fixed-top ul.navbar-nav li a {
+    padding-bottom: 14px;
+}
+
 .main {
     padding: 40px 15px;
     text-align: center;

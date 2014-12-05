@@ -48,3 +48,4 @@ site.conf
 .Trashes
 ehthumbs.db
 Thumbs.db
+dist/
