@@ -1,0 +1,308 @@
+<div class="row">
+    <div class="col-md-12 docs"><h1>Docs</h1>
+
+<div>Source code at: <a href="https://github.com/snapjay/ngcart">https://github.com/snapjay/ngcart</a></div>
+        <br />
+        <div>
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/snapjay/ngcart" data-icon="octicon-star" data-count-href="/snapjay/ngcart/stargazers" data-count-api="/repos/snapjay/ngcart#stargazers_count">Star</a>
+
+        <!-- Place this tag where you want the button to render. -->
+        <a class="github-button" href="https://github.com/snapjay" data-count-href="/snapjay/followers" data-count-api="/users/snapjay#followers">Follow @snapjay</a>
+        </div>
+<h1>Install</h1>
+<ul>
+    <li>Get the package: <br/>
+        <code class="block">
+            bower install ngcart --save
+        </code>
+    </li>
+    <li>Include the <code>ngCart/dist/ngCart.js</code> file in your index.html</li>
+    <li>Include add <code>ngCart</code> as a dependency in your app in the angular.module <br/>
+        Something like this:
+
+    </li>
+</ul>
+
+        <!--<!doctype html>-->
+        <!--<html ng-app="myApp">-->
+        <!--<head>-->
+        <!--<script src="bower_components/angular/angular.js"></script>-->
+        <!--<script src="bower_components/ngcart/dist/ngCart.js"></script>-->
+        <!--<script>-->
+        <!--var myApp = angular.module('myApp', ['ngCart']);-->
+        <!--</script>-->
+        <!--...-->
+        <!--</head>-->
+        <!--<body>-->
+        <!--...-->
+        <!--</body>-->
+        <!--</html>-->
+
+<pre rainbow-block><code data-language="html">&lt;!doctype html&gt;
+&lt;html ng-app=&quot;myApp&quot;&gt;
+&lt;head&gt;
+&lt;script src=&quot;bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;bower_components/ngcart/dist/ngCart.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
+&lt;/script&gt;
+...
+&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+
+
+
+<h1>Directives</h1>
+<h2>ngcart-addtocart</h2>
+<p>Renders an 'Add To Cart' Button</p>
+
+<pre rainbow-block><code data-language="html"><ngcart-addtocart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item">Add To Cart</ngcart-addtocart>
+</code></pre>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Attribute</th>
+        <th>Description</th>
+        <th>Default</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>*id</td>
+        <td>Unique identifier for this item.</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>*name</td>
+        <td>Text description of item</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>*price</td>
+        <td>Numerical value representing the value of the item</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>quantity</td>
+        <td>Numerical value representing the quantity of the item to add to cart</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>data</td>
+        <td>This can be an object that may store additional information about the item to be uses later e.g. image, options etc.</td>
+        <td>-</td>
+    </tr>
+</table>
+<em>*Required Attributes</em>
+
+
+<h2>ngcart-cart</h2>
+<p>Renders a view of the cart</p>
+
+<pre rainbow-block><code data-language="html"><ngcart-cart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item">Add To Cart</ngcart-cart>
+</code></pre>
+
+
+
+
+
+<h2>ngcart-summary</h2>
+<p>Renders a summary of the content of the cart (Typically used in the header bar of a website)</p>
+
+<pre rainbow-block><code data-language="html"><ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item">Add To Cart</ngcart-summary>
+</code></pre>
+
+<h1>Methods</h1>
+<h2>ngCart</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Method</th>
+        <th>Params</th>
+        <th>Return</th>
+
+    </tr>
+    </thead>
+
+    <tr>
+        <td>addItem</td>
+        <td>      id (int/string)
+            <br />name (string)
+            <br />price (float)
+            <br />quantity (int)
+            <br />data (any)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>getItemById</td>
+        <td>itemId (int)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>setShipping</td>
+        <td>shipping: (float) Set currency value of shipping amount</td>
+        <td>(float) Currency value of shipping amount</td>
+    </tr>
+    <tr>
+        <td>getShipping</td>
+        <td>-</td>
+        <td>(float) Currency value of shipping amount</td>
+    </tr>
+    <tr>
+        <td>setTax</td>
+        <td>tax: (float) Percentage of tax to charge</td>
+        <td>(float)  Currency value of tax amount</td>
+    </tr>
+    <tr>
+        <td>getTax</td>
+        <td>-</td>
+        <td>(float)  Currency value of tax amount</td>
+    </tr>
+    <tr>
+        <td>getCart</td>
+        <td>-</td>
+        <td>(object) Internal cart object</td>
+    </tr>
+    <tr>
+        <td>getItems</td>
+        <td>-</td>
+        <td>(object) Array of ngCartItem's</td>
+    </tr>
+    <tr>
+        <td>totalItems</td>
+        <td>-</td>
+        <td>(int) Number of items in the cart (regardless of quantity)</td>
+    </tr>
+    <tr>
+        <td>getSubTotal</td>
+        <td>-</td>
+        <td>(float) Currency value of cart pre tax or shipping</td>
+    </tr>
+    <tr>
+        <td>totalCost</td>
+        <td>-</td>
+        <td>(float) Currency value of cart including tax and shipping</td>
+    </tr>
+    <tr>
+        <td>removeItem</td>
+        <td>index: Remove an item in the cart based on its index</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>empty(int)</td>
+        <td>bool:  True if all items are removed from cart</td>
+        <td></td>
+    </tr>
+</table>
+
+
+
+<h2>ngCartItem</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Method</th>
+        <th>Params</th>
+        <th>Return</th>
+
+    </tr>
+    </thead>
+
+    <tr>
+        <td>setId</td>
+        <td>id (int/string)</td>
+        <td>id (int/string)</td>
+    </tr>
+    <tr>
+        <td>getId</td>
+        <td>-</td>
+        <td>id (int/string)</td>
+    </tr>
+
+    <tr>
+        <td>setName</td>
+        <td>name (string)</td>
+        <td>name (string)</td>
+    </tr>
+    <tr>
+        <td>getName</td>
+        <td>-</td>
+        <td>name (string)</td>
+    </tr>
+    <tr>
+        <td>setPrice</td>
+        <td>price (float): must be above 0</td>
+        <td>price (float)</td>
+    </tr>
+    <tr>
+        <td>getPrice</td>
+        <td>-</td>
+        <td>price (float)</td>
+    </tr>
+    <tr>
+        <td>setQuantity</td>
+        <td>quantity (int): set to 1 if invalid quantity is set</td>
+        <td>quantity (int)</td>
+    </tr>
+    <tr>
+        <td>getQuantity</td>
+        <td>-</td>
+        <td>quantity (int)</td>
+    </tr>
+    <tr>
+        <td>setData</td>
+        <td>data: (object)</td>
+        <td>data (object)</td>
+    </tr>
+    <tr>
+        <td>getData</td>
+        <td>-</td>
+        <td>data: (object) or false if not set</td>
+    </tr>
+    <tr>
+        <td>getTotal</td>
+        <td>-</td>
+        <td>float: quantity * price</td>
+    </tr>
+    </table>
+
+<h1>Broadcasts</h1>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>Params</th>
+        <th>Description</th>
+
+    </tr>
+    </thead>
+
+    <tr>
+        <td>ngCart:itemAdded</td>
+        <td>ngCartItem</td>
+        <td>Item that was added</td>
+    </tr>
+    <tr>
+        <td>ngCart:itemRemoved</td>
+        <td></td>
+        <td>Item was removed from cart</td>
+    </tr>
+    <tr>
+        <td>ngCart:change</td>
+        <td></td>
+        <td>Cart has changed. i.e. item added, removed or a quantity has changed</td>
+    </tr>
+
+
+    </table>
+
+
+    </div>
+</div>

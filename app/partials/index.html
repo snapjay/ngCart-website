@@ -1,0 +1,25 @@
+<div class="main">
+    <h1>ngCart</h1>
+    <h2>Really simple shopping cart for AngularJS</h2>
+
+    <div class="row">
+
+
+
+        <div class="col-xs-4" ng-repeat="item in products">
+            <div class="thumbnail">      <h3>{{ item.name }}</h3>
+                <img ng-src="{{ item.imageUrl }}"></h3>
+                <p>{{ item.snippet }}</p>
+                <h2 class="price">{{ item.name.length*10-.01 | currency}}</h2>
+                <ngcart-addtocart id="{{ item.id }}"
+                           name="{{ item.name }}"
+                           price="{{ item.name.length*10-.01  }}"
+                           data="item"
+                           quantity="1">
+                    Add To Cart
+                </ngcart-addtocart></div>
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
