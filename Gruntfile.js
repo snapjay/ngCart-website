@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         bower: grunt.file.readJSON('.bowerrc'),
-        aws: grunt.file.readJSON('grunt-aws.json'),
+        aws: grunt.file.readJSON('aws.json'),
 
 //        useminPrepare: {
 //            html: "<%= pkg.path.app %>/index.html",
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
             options: {
                 accessKeyId: '<%= aws.key %>', // Use the variables
                 secretAccessKey: '<%= aws.secret %>', // You can also use env variables
-                region: 'us-east-1',
+                region: '<%= aws.region %>',
                 uploadConcurrency: 5, // 5 simultaneous uploads
                 downloadConcurrency: 5, // 5 simultaneous downloads
                 differential: true, // Only uploads the files that have changed
