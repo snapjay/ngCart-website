@@ -7,6 +7,7 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
 }])
 
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
     $stateProvider
 
