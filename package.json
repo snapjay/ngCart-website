@@ -10,7 +10,7 @@
     },
     "path": {
         "app": "app",
-        "dist": "dist"
+        "dist": "build"
     },
     "author": {
         "name": "Dan Shreim",

@@ -33,12 +33,12 @@ table tfoot td{
 }
 
 .thumbnail{
-    min-height: 538px;
+    height: 510px;
 }
 .thumbnail img{
      width: 60%;
 }.thumbnail p{
-     height:92px;
+     height:63px;
     overflow: hidden;
 
 }

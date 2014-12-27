@@ -13,8 +13,7 @@
 
 
         <h1>JSFiddle Demo</h1>
-        <iframe width="100%" height="300" src="http://jsfiddle.net/snapjay/ypjrsat0/19/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
+    <iframe width="100%" height="300" src="http://jsfiddle.net/snapjay/ypjrsat0/24/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 <h1>Install</h1>
 <ul>
     <li>Get the package: <br/>
@@ -137,7 +136,7 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
 
     <tr>
         <td>addItem</td>
-        <td>      id (int/string)
+        <td>id (int/string)
             <br />name (string)
             <br />price (float)
             <br />quantity (int)
@@ -160,14 +159,19 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
         <td>(float) Currency value of shipping amount</td>
     </tr>
     <tr>
-        <td>setTax</td>
+        <td>setTaxRate</td>
         <td>tax: (float) Percentage of tax to charge</td>
-        <td>(float)  Currency value of tax amount</td>
+        <td>(float)  Percentage of tax to charge</td>
+    </tr>
+    <tr>
+        <td>getTaxRate</td>
+        <td>-</td>
+        <td>(float) Percentage - Tax rate to charge</td>
     </tr>
     <tr>
         <td>getTax</td>
         <td>-</td>
-        <td>(float)  Currency value of tax amount</td>
+        <td>(float)  Currency value of tax amount to charge</td>
     </tr>
     <tr>
         <td>getCart</td>
@@ -195,14 +199,24 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
         <td>(float) Currency value of cart including tax and shipping</td>
     </tr>
     <tr>
-        <td>removeItem</td>
-        <td>index: Remove an item in the cart based on its index</td>
+        <td>removeItem <em>deprecated</em></td>
+        <td>index (int) Remove an item in the cart based on its index postion in cart</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>removeItemById</td>
+        <td>id (string): Remove an item in the cart based on its id</td>
         <td>-</td>
     </tr>
     <tr>
         <td>empty(int)</td>
         <td>bool:  True if all items are removed from cart</td>
         <td></td>
+    </tr>
+    <tr>
+        <td>toObject</td>
+        <td>-</td>
+        <td>Returns a JSON representation of the cart and all items</td>
     </tr>
 </table>
 
@@ -253,7 +267,7 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
     </tr>
     <tr>
         <td>setQuantity</td>
-        <td>quantity (int): set to 1 if invalid quantity is set</td>
+        <td>quantity ((1)int, (false)relative):  If relative is true will adjust value relative to current quantity.  If false will explicitly set the value</td>
         <td>quantity (int)</td>
     </tr>
     <tr>
@@ -275,6 +289,11 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
         <td>getTotal</td>
         <td>-</td>
         <td>float: quantity * price</td>
+    </tr>
+    <tr>
+        <td>toObject</td>
+        <td>-</td>
+        <td>Returns a JSON representation of the item</td>
     </tr>
     </table>
 

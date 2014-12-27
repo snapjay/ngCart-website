@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-md-12">
         <h1>ngCart</h1>
-        <h2>Really simple shopping cart for AngularJS</h2>
 
+        <h2>Really simple shopping cart for AngularJS</h2>
 
 
         <p></p>
@@ -12,33 +12,35 @@
             <li>Add item to cart directive</li>
             <li>Summary of items in your cart directive</li>
             <li>Template driven for full UI customisation</li>
-            <li>Custom data object for additional info/options images </li>
+            <li>Custom data object for additional info/options images</li>
             <li>Add shipping costs</li>
             <li>Add Taxes</li>
             <li>Events Broadcast on $rootScope</li>
+            <li>Creates clean cart JSON object to send back to your server </li>
         </ul>
-
 
 
     </div>
 </div>
-    <h1>ngCart Demo Store </h1>
+<h1>ngCart Demo Store </h1>
 
-    <div class="row">
+<div class="row">
 
-        <div class="col-xs-4" ng-repeat="item in products">
-            <div class="thumbnail">      <h3>{{ item.name }}</h3>
-                <img ng-src="{{ item.imageUrl }}"></h3>
-                <p>{{ item.snippet }}</p>
-                <h3 class="price">{{ item.name.length*10-.01 | currency}}</h3>
-                <ngcart-addtocart id="{{ item.id }}"
-                           name="{{ item.name }}"
-                           price="{{ item.name.length*10-.01  }}"
-                           data="item"
-                           quantity="1">
-                    Add To Cart
-                </ngcart-addtocart></div>
+    <div class="col-xs-4" ng-repeat="item in products">
+        <div class="thumbnail"><h3>{{ item.name }}</h3>
+            <img ng-src="{{ item.imageUrl }}"></h3>
+            <p>{{ item.snippet }}</p>
+
+            <h3 class="price">{{ item.name.length*10-.01 | currency}}</h3>
+            <ngcart-addtocart id="{{ item.id }}"
+                              name="{{ item.name }}"
+                              price="{{ item.name.length*10-.01  }}"
+                              data="item"
+                              quantity="1">
+                Add To Cart
+            </ngcart-addtocart>
         </div>
     </div>
-    <div>
-    </div>
+</div>
+<div>
+</div>

@@ -41,7 +41,7 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
     .controller('main',[ '$http','ngCart', '$scope', function ($http, ngCart, $scope) {
 
         ngCart.setShipping(10.99);
-        ngCart.setTax(13);
+        ngCart.setTaxRate(7.5);
 
 
     $http({method: 'GET', url: 'data/phones.json'})
@@ -59,10 +59,10 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
 .controller('cart',['ngCart', '$log', '$scope', function (ngCart,$log, $scope) {
     $scope.showCart = function(){
 
-        $log.info ('---Total Cost:---');
-        $log.info (ngCart.totalCost());
         $log.info ('---Items in Cart:---');
-        $log.info (ngCart.getItems());
+        var cart = ngCart.toObject();
+        $log.info (cart);
+        $scope.checkout = cart;
 
     }
 
