@@ -41,7 +41,7 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
     .controller('main',[ '$http','ngCart', '$scope', function ($http, ngCart, $scope) {
 
         ngCart.setShipping(10.99);
-        ngCart.setTaxRate(7.5);
+        ngCart.setTax(7.5);
 
 
     $http({method: 'GET', url: 'data/phones.json'})
