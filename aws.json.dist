@@ -1,6 +1,6 @@
 {
     "key":"",
-    "secret":""
-    "bucket":"",
+    "secret":"",
+    "bucket":"ngcart.snapjay.com",
     "region": "us-east-1"
 }

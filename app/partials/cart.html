@@ -10,5 +10,12 @@
 </div>
 <br/>
 <div class="row">
-    <div class="col-md-4 col-md-offset-8 text-right"> <em role="alert"><span class="glyphicon glyphicon-thumbs-up"></span> See console for checkout results</em></div>
+
+<div ng-show="checkout">
+    <h4>Results of ngCart.toObject()</h4>
+    <div class="col-md-12"> <em role="alert"><span class="glyphicon glyphicon-thumbs-up"></span> See your console to browse</em></div>
+    <pre>{{ checkout | json}}</pre>
+</div>
+
+
 </div>
