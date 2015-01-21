@@ -7,7 +7,7 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
 }])
 
 .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', function($locationProvider, $stateProvider, $urlRouterProvider) {
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
     $stateProvider
 
@@ -41,7 +41,7 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
     .controller('main',[ '$http','ngCart', '$scope', function ($http, ngCart, $scope) {
 
         ngCart.setShipping(10.99);
-        ngCart.setTax(13);
+        ngCart.setTaxRate(13);
 
 
     $http({method: 'GET', url: 'data/phones.json'})

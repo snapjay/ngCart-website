@@ -66,7 +66,7 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
 <h2>ngcart-addtocart</h2>
 <p>Renders an 'Add To Cart' Button</p>
 
-<pre rainbow-block><code data-language="html"><ngcart-addtocart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item">Add To Cart</ngcart-addtocart>
+<pre rainbow-block><code data-language="html"><ngcart-addtocart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" quantity="1" quantity-max="30" data="item">Add To Cart</ngcart-addtocart>
 </code></pre>
 
 <table class="table table-striped">
@@ -94,8 +94,13 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
     </tr>
     <tr>
         <td>quantity</td>
-        <td>Numerical value representing the quantity of the item to add to cart</td>
+        <td>Numerical value representing the quantity of the item to add to cart.  If quantityMax is set; this default the quantity dropdown </td>
         <td>1</td>
+    </tr>
+    <tr>
+        <td>quantityMax</td>
+        <td>If set show a quantity dropdown to this value, else nothing is shown.  If item is already in cart, will default to current quantity</td>
+        <td>false</td>
     </tr>
     <tr>
         <td>data</td>
@@ -141,13 +146,14 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
             <br />name (string)
             <br />price (float)
             <br />quantity (int)
-            <br />data (any)</td>
-        <td></td>
+            <br />data (any)
+        </td>
+        <td>Returns ngCart item just added if successful</td>
     </tr>
     <tr>
         <td>getItemById</td>
-        <td>itemId (int)</td>
-        <td></td>
+        <td>itemId (int/string)</td>
+        <td>Returns ngCart item if found, else false</td>
     </tr>
     <tr>
         <td>setShipping</td>
@@ -160,14 +166,19 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
         <td>(float) Currency value of shipping amount</td>
     </tr>
     <tr>
-        <td>setTax</td>
+        <td>setTaxRate</td>
         <td>tax: (float) Percentage of tax to charge</td>
-        <td>(float)  Currency value of tax amount</td>
+        <td>(float)  Percentage value of tax rate</td>
+    </tr>
+    <tr>
+        <td>getTaxRate</td>
+        <td></td>
+        <td>(float)  Currency value of tax rate</td>
     </tr>
     <tr>
         <td>getTax</td>
         <td>-</td>
-        <td>(float)  Currency value of tax amount</td>
+        <td>(float)  Currency value of tax amount to charge</td>
     </tr>
     <tr>
         <td>getCart</td>
@@ -180,7 +191,7 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
         <td>(object) Array of ngCartItem's</td>
     </tr>
     <tr>
-        <td>totalItems</td>
+        <td>getTotalItems</td>
         <td>-</td>
         <td>(int) Number of items in the cart (regardless of quantity)</td>
     </tr>

@@ -9,7 +9,7 @@
     "angular": "1.2.x",
     "angular-ui-router": "0.*",
     "angular-resource": "~1.2.x",
-    "ngcart": "~0.0.2-rc.1",
+    "ngcart": "https://github.com/snapjay/ngCart.git#master",
     "rainbow": "~1.1.9",
     "bootstrap": "~3.3.1"
   }
