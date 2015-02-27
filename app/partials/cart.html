@@ -5,17 +5,15 @@
     </div>
 </div>
 
+
+
 <div class="row">
-    <div class="col-md-12 text-right"> <button class="btn btn-primary" ng-click="showCart()">Checkout</button></div>
-</div>
-<br/>
-<div class="row">
-
-<div ng-show="checkout">
-    <h4>Results of ngCart.toObject()</h4>
-    <div class="col-md-12"> <em role="alert"><span class="glyphicon glyphicon-thumbs-up"></span> See your console to browse</em></div>
-    <pre>{{ checkout | json}}</pre>
-</div>
-
-
+    <div class="col-md-12 text-right">
+        <h4>'log' checkout</h4>
+        <ngcart-checkout service="log">Checkout</ngcart-checkout>
+        <h4>'http' checkout</h4>
+        <ngcart-checkout service="http" settings="httpSettings">Checkout </ngcart-checkout>
+        <h4>'paypal' checkout</h4>
+        <ngcart-checkout service="paypal" settings="payPalSettings"></ngcart-checkout>
+    </div>
 </div>

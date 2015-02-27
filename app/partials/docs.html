@@ -114,7 +114,7 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
 <h2>ngcart-cart</h2>
 <p>Renders a view of the cart</p>
 
-<pre rainbow-block><code data-language="html"><ngcart-cart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item">Add To Cart</ngcart-cart>
+<pre rainbow-block><code data-language="html"><ngcart-cart></ngcart-cart>
 </code></pre>
 
 
@@ -124,10 +124,103 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
 <h2>ngcart-summary</h2>
 <p>Renders a summary of the content of the cart (Typically used in the header bar of a website)</p>
 
-<pre rainbow-block><code data-language="html"><ngcart-summary id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" data="item">Add To Cart</ngcart-summary>
+<pre rainbow-block><code data-language="html"><ngcart-summary></ngcart-summary>
 </code></pre>
 
-<h1>Methods</h1>
+
+        <h2>ngcart-cart</h2>
+        <p>Renders a view of the cart</p>
+
+<pre rainbow-block><code data-language="html"><ngcart-cart></ngcart-cart>
+</code></pre>
+
+
+
+
+        <h2>ngcart-checkout</h2>
+<p>Renders an 'Checkout' Button</p>
+
+<pre rainbow-block><code data-language="html"><ngcart-checkout service="http" settings="{ url:'/checkout' }">Checkout</ngcart-checkout>
+</code></pre>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>*service</td>
+                <td>Values of either 'log', 'http' or 'paypal'</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>settings</td>
+                <td>Setting specific to service as described below</td>
+                <td>-</td>
+            </tr>
+        </table>
+        <em>*Required Attributes</em>
+
+
+        <h3>log</h3>
+        <p>Sends content of cart to console</p>
+
+        <h3>http</h3>
+        <p>Sends a POST http request with content of cart</p>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>*url</td>
+                <td>URL you wish to post the cart to</td>
+                <td>-</td>
+            </tr>
+        </table>
+        <h3>paypal</h3>
+        <p>Renders a paypal checkout button</p>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Description</th>
+                <th>Default</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>*business</td>
+                <td>Email address to send money to</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>*item_number</td>
+                <td>Number to refer to order</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>*currency_code</td>
+                <td>Currency for transaction</td>
+                <td>-</td>
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+        <h1>Methods</h1>
 <h2>ngCart</h2>
 
 <table class="table table-striped">

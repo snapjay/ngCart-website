@@ -57,6 +57,19 @@ angular.module('ngCartDemo', ['ngResource', 'ui.router', 'ngCart'])
 }])
 
 .controller('cart',['ngCart', '$log', '$scope', function (ngCart,$log, $scope) {
+
+
+        $scope.httpSettings = {
+            url:'/checkout'
+        };
+
+        $scope.payPalSettings ={ paypal:{
+            business:'dan@snapjay.com',
+            item_name:'Order',
+            item_number:'item_number',
+            currency_code:'CAD'
+        }};
+
     $scope.showCart = function(){
 
         $log.info ('---Total Cost:---');
