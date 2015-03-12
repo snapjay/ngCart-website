@@ -1,19 +1,28 @@
 <div class="row">
     <div class="col-md-12">
-        <h1>Cart</h1>
+        <h1>Cart <span> (ngcart-cart)</span></h1>
         <ngcart-cart></ngcart-cart>
     </div>
 </div>
 
 
-
 <div class="row">
-    <div class="col-md-12 text-right">
-        <h4>'log' checkout</h4>
-        <ngcart-checkout service="log">Checkout</ngcart-checkout>
-        <h4>'http' checkout</h4>
-        <ngcart-checkout service="http" settings="httpSettings">Checkout </ngcart-checkout>
-        <h4>'paypal' checkout</h4>
-        <ngcart-checkout service="paypal" settings="payPalSettings"></ngcart-checkout>
+    <div class="col-md-12">
+        <h1>Checkout <span> (ngcart-checkout)</span></h1>
+
+        <div class="row">
+            <div class="col-xs-4 col-md-4">
+                <h4>service 'log'</h4>
+                <ngcart-checkout service="log">Checkout</ngcart-checkout>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <h4>service 'http'</h4>
+                <ngcart-checkout service="http" settings="httpSettings">Checkout</ngcart-checkout>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <h4>service 'paypal'</h4>
+                <ngcart-checkout service="paypal" settings="payPalSettings"></ngcart-checkout>
+            </div>
+        </div>
     </div>
 </div>

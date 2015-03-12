@@ -13,7 +13,7 @@
 
 
         <h1>JSFiddle Demo</h1>
-        <iframe width="100%" height="300" src="http://jsfiddle.net/snapjay/ypjrsat0/24/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <iframe width="100%" height="300" src="http://jsfiddle.net/snapjay/ypjrsat0/70/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
 <h1>Install</h1>
 <ul>
@@ -29,35 +29,23 @@
     </li>
 </ul>
 
-        <!--<!doctype html>-->
-        <!--<html ng-app="myApp">-->
-        <!--<head>-->
-        <!--<script src="bower_components/angular/angular.js"></script>-->
-        <!--<script src="bower_components/ngcart/dist/ngCart.js"></script>-->
-        <!--<script>-->
-        <!--var myApp = angular.module('myApp', ['ngCart']);-->
-        <!--</script>-->
-        <!--...-->
-        <!--</head>-->
-        <!--<body>-->
-        <!--...-->
-        <!--</body>-->
-        <!--</html>-->
 
-<pre rainbow-block><code data-language="html">&lt;!doctype html&gt;
-&lt;html ng-app=&quot;myApp&quot;&gt;
-&lt;head&gt;
-&lt;script src=&quot;bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;bower_components/ngcart/dist/ngCart.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
-&lt;/script&gt;
-...
-&lt;/head&gt;
-&lt;body&gt;
-...
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+
+<pre rainbow-block><code data-language="html">        <!doctype html>
+    <html ng-app="myApp">
+    <head>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/ngcart/dist/ngCart.js"></script>
+        <script>
+            var myApp = angular.module('myApp', ['ngCart']);
+        </script>
+        ...
+    </head>
+    <body>
+    ...
+    </body>
+    </html>
+</code></pre>
 
 
 
@@ -209,6 +197,11 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
             <tr>
                 <td>*currency_code</td>
                 <td>Currency for transaction</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>no_note</td>
+                <td>Let user add a note to checkout page</td>
                 <td>-</td>
             </tr>
         </table>
@@ -406,7 +399,7 @@ var myApp = angular.module(&#39;myApp&#39;, [&#39;ngCart&#39;]);
     <tr>
         <td>ngCart:change</td>
         <td></td>
-        <td>Cart has changed. i.e. item added, removed or a quantity has changed</td>
+        <td>Cart has changed. i.e. item added, removed, a quantity has changed or cart was emptied</td>
     </tr>
 
 

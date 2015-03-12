@@ -14,7 +14,10 @@ h2 {
     margin-bottom: 30px;
     border-bottom: 1px solid #eee;
 }
-
+h1 span {
+    font-size: 50%;
+    display: block;
+}
 pre {
     padding: 25px;
 }

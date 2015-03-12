@@ -8,7 +8,6 @@ tmp
 _ide_helper.php
 *.iml
 site.conf
-.idea
 *.svn
 *.bat
 
@@ -41,7 +40,6 @@ site.conf
 
 # OS generated files #
 ######################
-.DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
@@ -49,3 +47,6 @@ site.conf
 ehthumbs.db
 Thumbs.db
 dist/
+aws.json
+/build/
+/.tmp/
