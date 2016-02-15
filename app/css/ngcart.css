@@ -43,6 +43,7 @@ table tfoot td{
 }.thumbnail p{
      height:63px;
     overflow: hidden;
+    font-size: 12px;
 
 }
 .thumbnail .price{
