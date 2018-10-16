@@ -8,7 +8,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         bower: grunt.file.readJSON('.bowerrc'),
-        aws: grunt.file.readJSON('aws.json'),
 
 //        useminPrepare: {
 //            html: "<%= pkg.path.app %>/index.html",
@@ -47,7 +46,7 @@ module.exports = function (grunt) {
                         expand: true,
                         cwd: "<%= pkg.path.app  %>",
                         dest: "<%= pkg.path.dist  %>",
-                        src: ['index.html',
+                        src: ['index.html', 'netlify.toml',
                             'img/**/*.*',
                             'data/**/*.*',
                             'template/**/*.*',
@@ -61,9 +60,9 @@ module.exports = function (grunt) {
 
         aws_s3: {
             options: {
-                accessKeyId: '<%= aws.key %>', // Use the variables
-                secretAccessKey: '<%= aws.secret %>', // You can also use env variables
-                region: '<%= aws.region %>',
+                accessKeyId: '', // Use the variables
+                secretAccessKey: '', // You can also use env variables
+                region: '',
                 uploadConcurrency: 5, // 5 simultaneous uploads
                 downloadConcurrency: 5, // 5 simultaneous downloads
                 differential: true, // Only uploads the files that have changed
@@ -81,7 +80,7 @@ module.exports = function (grunt) {
             },
             deploy: {
                 options: {
-                    bucket: "<%= aws.bucket %>"
+                    bucket: ""
                 },
                 files: [
                     {
